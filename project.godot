@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="Roguelike"
+run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+player=""
 
 [rendering]
 

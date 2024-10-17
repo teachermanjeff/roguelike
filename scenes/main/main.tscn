@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbgo33qbgobvb"]
+
+[ext_resource type="TileSet" uid="uid://dhl7xpq5655ch" path="res://scenes/main/main.tres" id="1_fe1jj"]
+[ext_resource type="Script" path="res://player/player_spawner.gd" id="2_3kpa7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = ExtResource("1_fe1jj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerSpawner" type="Node2D" parent="."]
+position = Vector2(16, 16)
+script = ExtResource("2_3kpa7")
