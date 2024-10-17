@@ -1,9 +1,13 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dhl7xpq5655ch"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dhl7xpq5655ch"]
 
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="1_414ko"]
+[ext_resource type="PackedScene" uid="uid://efn3m2ivtlfb" path="res://entities/wall.tscn" id="2_nui6k"]
+[ext_resource type="PackedScene" uid="uid://cgad7w8ewmoda" path="res://entities/grass.tscn" id="3_yypob"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3vo1t"]
 scenes/1/scene = ExtResource("1_414ko")
+scenes/2/scene = ExtResource("2_nui6k")
+scenes/3/scene = ExtResource("3_yypob")
 
 [resource]
 tile_size = Vector2i(32, 32)

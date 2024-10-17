@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgad7w8ewmoda"]
+
+[ext_resource type="Texture2D" uid="uid://ces1b82g35e2r" path="res://sprites/up_symbol.png" id="1_irffv"]
+
+[node name="Grass" type="Node2D" groups=["wall"]]
+texture_filter = 1
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_irffv")
