@@ -24,6 +24,3 @@ tile_set = SubResource("TileSet_d4kkb")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
 position = Vector2(-16, 16)
-
-[connection signal="body_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapEntities/@Area2D@57866" to="TileMapEntities/@Area2D@57866" method="_on_body_entered"]

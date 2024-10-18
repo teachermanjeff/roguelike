@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bguwvf3liqqtk"]
+[gd_scene load_steps=12 format=3 uid="uid://bguwvf3liqqtk"]
 
 [ext_resource type="Texture2D" uid="uid://dvjdndy0ek10" path="res://sprites/at_symbol.png" id="1_kx455"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uwb68"]
 [ext_resource type="Shader" path="res://tint.gdshader" id="2_h465g"]
+[ext_resource type="Texture2D" uid="uid://pve2ju8x0pug" path="res://sprites/vingette.png" id="4_cpoli"]
 [ext_resource type="PackedScene" uid="uid://cyw4i0ydj2pxt" path="res://ui/stats.tscn" id="4_shlpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3it"]
@@ -52,3 +53,8 @@ position = Vector2(2.38419e-07, -1.19209e-07)
 [node name="Stats" parent="Camera2D" instance=ExtResource("4_shlpt")]
 position = Vector2(-80, -60.8)
 scale = Vector2(0.2, 0.2)
+
+[node name="Vingette" type="Sprite2D" parent="Camera2D"]
+position = Vector2(3.8147e-06, -9.53674e-06)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("4_cpoli")
