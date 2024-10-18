@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bguwvf3liqqtk"]
+[gd_scene load_steps=11 format=3 uid="uid://bguwvf3liqqtk"]
 
 [ext_resource type="Texture2D" uid="uid://dvjdndy0ek10" path="res://sprites/at_symbol.png" id="1_kx455"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uwb68"]
 [ext_resource type="Shader" path="res://tint.gdshader" id="2_h465g"]
+[ext_resource type="PackedScene" uid="uid://cyw4i0ydj2pxt" path="res://ui/stats.tscn" id="4_shlpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3it"]
 size = Vector2(6.3, 6.3)
@@ -44,3 +45,10 @@ material = SubResource("ShaderMaterial_vjtvf")
 position = Vector2(-2.83122e-07, -2.83122e-07)
 scale = Vector2(0.914286, 0.914286)
 texture = ExtResource("1_kx455")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.38419e-07, -1.19209e-07)
+
+[node name="Stats" parent="Camera2D" instance=ExtResource("4_shlpt")]
+position = Vector2(-80, -60.8)
+scale = Vector2(0.2, 0.2)
