@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgad7w8ewmoda"]
+[gd_scene load_steps=6 format=3 uid="uid://cgad7w8ewmoda"]
 
+[ext_resource type="Shader" path="res://tint.gdshader" id="1_dvift"]
 [ext_resource type="Texture2D" uid="uid://ces1b82g35e2r" path="res://sprites/up_symbol.png" id="1_irffv"]
 
-[node name="Grass" type="Node2D" groups=["wall"]]
+[sub_resource type="Gradient" id="Gradient_rlibi"]
+colors = PackedColorArray(0, 0, 0, 1, 0.133333, 0.772549, 0.368627, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hhkd2"]
+gradient = SubResource("Gradient_rlibi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6g8qk"]
+shader = ExtResource("1_dvift")
+shader_parameter/pallete = SubResource("GradientTexture1D_hhkd2")
+
+[node name="Grass" type="Node2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6g8qk")
+position = Vector2(-1.63913e-07, -1.63913e-07)
+scale = Vector2(0.914286, 0.914286)
 texture = ExtResource("1_irffv")

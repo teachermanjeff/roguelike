@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://efn3m2ivtlfb"]
+[gd_scene load_steps=3 format=3 uid="uid://efn3m2ivtlfb"]
 
 [ext_resource type="Texture2D" uid="uid://ch4ejswypuqa6" path="res://sprites/hash_symbol.png" id="1_kmb3a"]
 
-[node name="Wall" type="Node2D" groups=["wall"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g82hk"]
+size = Vector2(6.4, 6.4)
+
+[node name="Wall" type="StaticBody2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-07, -3.8147e-07)
+shape = SubResource("RectangleShape2D_g82hk")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.83122e-07, -2.83122e-07)
+scale = Vector2(0.914286, 0.914286)
 texture = ExtResource("1_kmb3a")

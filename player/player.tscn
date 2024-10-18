@@ -1,10 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://bguwvf3liqqtk"]
+[gd_scene load_steps=8 format=3 uid="uid://bguwvf3liqqtk"]
 
 [ext_resource type="Texture2D" uid="uid://dvjdndy0ek10" path="res://sprites/at_symbol.png" id="1_kx455"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_uwb68"]
+[ext_resource type="Shader" path="res://tint.gdshader" id="2_h465g"]
 
-[node name="Player" type="Node2D" groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3it"]
+size = Vector2(6.3, 6.3)
+
+[sub_resource type="Gradient" id="Gradient_r7mb5"]
+colors = PackedColorArray(0, 0, 0, 1, 0.231373, 0.509804, 0.964706, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t7yg8"]
+gradient = SubResource("Gradient_r7mb5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjtvf"]
+shader = ExtResource("2_h465g")
+shader_parameter/pallete = SubResource("GradientTexture1D_t7yg8")
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
-scale = Vector2(5, 5)
+motion_mode = 1
+script = ExtResource("1_uwb68")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.62939e-07, -7.62939e-07)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_yq3it")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vjtvf")
+position = Vector2(-8.34465e-07, -8.34465e-07)
+scale = Vector2(4.57143, 4.57143)
 texture = ExtResource("1_kx455")

@@ -18,13 +18,12 @@ config/icon="res://icon.svg"
 [display]
 
 window/size/viewport_width=800
-window/size/viewport_height=600
+window/size/viewport_height=608
 window/stretch/mode="canvas_items"
 
 [global_group]
 
 player=""
-wall=""
 
 [rendering]
 
