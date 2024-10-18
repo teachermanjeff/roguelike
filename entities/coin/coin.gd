@@ -2,4 +2,5 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		print_debug("Yay a coin!")
+		queue_free()
+		PlayerData.score += 1

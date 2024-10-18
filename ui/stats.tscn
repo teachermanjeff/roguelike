@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyw4i0ydj2pxt"]
+
+[ext_resource type="Script" path="res://ui/stats.gd" id="1_xdj2f"]
+[ext_resource type="Texture2D" uid="uid://ca28egttols1s" path="res://sprites/coins_string.png" id="2_j0knt"]
+
+[sub_resource type="Gradient" id="Gradient_lor5d"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y5k28"]
+gradient = SubResource("Gradient_lor5d")
+
+[node name="Stats" type="Node2D"]
+texture_filter = 1
+position = Vector2(32, 0)
+script = ExtResource("1_xdj2f")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(640, 592)
+scale = Vector2(1, 31.9999)
+texture = SubResource("GradientTexture1D_y5k28")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608, 592)
+scale = Vector2(4.57143, 4.571)
+texture = ExtResource("2_j0knt")
+
+[node name="Score" type="Node2D" parent="."]
+
+[node name="Tens" type="Sprite2D" parent="Score"]
+texture_filter = 1
+position = Vector2(720, 592)
+scale = Vector2(4.57143, 4.57143)
+
+[node name="Ones" type="Sprite2D" parent="Score"]
+texture_filter = 1
+position = Vector2(752, 592)
+scale = Vector2(4.57143, 4.57142)

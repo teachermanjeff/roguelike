@@ -13,13 +13,22 @@ config_version=5
 config/name="Roguelike"
 run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerData="*res://autoload/player_data.gd"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=608
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/show_image=false
 
 [global_group]
 
@@ -29,3 +38,4 @@ player=""
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
