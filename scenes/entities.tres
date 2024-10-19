@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://byc5o2d3g8w02"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://byc5o2d3g8w02"]
 
 [ext_resource type="PackedScene" uid="uid://b4ffkbrai8hw3" path="res://entities/coin/coin.tscn" id="1_831yp"]
+[ext_resource type="PackedScene" uid="uid://0cw2r4h8yxil" path="res://entities/goblin/goblin.tscn" id="2_pcpsw"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lt28c"]
 scenes/1/scene = ExtResource("1_831yp")
+scenes/3/scene = ExtResource("2_pcpsw")
 
 [resource]
 tile_size = Vector2i(32, 32)

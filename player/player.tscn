@@ -14,11 +14,11 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_pb6bw"]
 gradient = SubResource("Gradient_ldqst")
 
-[sub_resource type="Gradient" id="Gradient_r7mb5"]
+[sub_resource type="Gradient" id="Gradient_isi33"]
 colors = PackedColorArray(0, 0, 0, 1, 0.231373, 0.509804, 0.964706, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t7yg8"]
-gradient = SubResource("Gradient_r7mb5")
+gradient = SubResource("Gradient_isi33")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjtvf"]
 shader = ExtResource("2_h465g")
