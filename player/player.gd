@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const MOVE_DISTANCE: int = 32
-const SNAP_DISTANCE: int = 32
 const MOVE_DELAY: float = 0.2
 
 var can_move = true
@@ -32,7 +31,7 @@ func _physics_process(_delta):
 			disable_movement()
 
 func snap_to_grid():
-	global_position = global_position.snapped(Vector2(SNAP_DISTANCE, SNAP_DISTANCE))
+	global_position = global_position.snapped(Vector2(MOVE_DISTANCE, MOVE_DISTANCE))
 
 func disable_movement():
 	can_move = false

@@ -35,7 +35,6 @@ script = ExtResource("1_uwb68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.76837e-08, -4.76837e-08)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yq3it")
 one_way_collision_margin = 0.0
 
