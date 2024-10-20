@@ -15,7 +15,7 @@ var sprites = {
 }
 
 func _process(_delta):
-	var new_score = str(PlayerData.score)
+	var new_score = str(PlayerData.player_health)
 	if score == new_score:
 		return
 	score = new_score
