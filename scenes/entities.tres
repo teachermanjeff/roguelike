@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://byc5o2d3g8w02"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://ttaux60r73ew"]
 
 [ext_resource type="PackedScene" uid="uid://b4ffkbrai8hw3" path="res://entities/coin/coin.tscn" id="1_831yp"]
 [ext_resource type="PackedScene" uid="uid://0cw2r4h8yxil" path="res://entities/goblin/goblin.tscn" id="2_pcpsw"]

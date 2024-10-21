@@ -67,5 +67,4 @@ texture = SubResource("CompressedTexture2D_jmjnp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.90735e-07, 1.90735e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x0hbf")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dbgo33qbgobvb"]
 
-[ext_resource type="TileSet" uid="uid://dhl7xpq5655ch" path="res://scenes/ground.tres" id="1_fe1jj"]
-[ext_resource type="TileSet" uid="uid://byc5o2d3g8w02" path="res://scenes/entities.tres" id="2_py0nx"]
+[ext_resource type="TileSet" uid="uid://cyboy1cj3nmav" path="res://scenes/ground.tres" id="1_fe1jj"]
+[ext_resource type="TileSet" uid="uid://ttaux60r73ew" path="res://scenes/entities.tres" id="2_py0nx"]
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="2_qh1r5"]
 
 [node name="Main" type="Node2D"]
@@ -21,4 +21,4 @@ tile_set = ExtResource("2_py0nx")
 position = Vector2(400, 960)
 
 [connection signal="area_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapEntities/@Area2D@61227" to="TileMapEntities/@Area2D@61227" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapEntities/@Area2D@21364" to="TileMapEntities/@Area2D@21364" method="_on_area_entered"]
