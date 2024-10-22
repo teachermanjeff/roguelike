@@ -14,11 +14,11 @@ tile_set = ExtResource("1_fe1jj")
 
 [node name="TileMapEntities" type="TileMapLayer" parent="."]
 position = Vector2(416, 944)
-tile_map_data = PackedByteArray("AAD3//7/AAAAAAAAAQACAPz/AAAAAAAAAQAEAAEAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD3//7/AAAAAAAAAQACAPz/AAAAAAAAAQAEAAEAAAAAAAAAAwAJAPn/AAAAAAAAAwA=")
 tile_set = ExtResource("2_py0nx")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
 position = Vector2(400, 960)
 
-[connection signal="area_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_area_entered"]
-[connection signal="area_entered" from="TileMapEntities/@Area2D@21364" to="TileMapEntities/@Area2D@21364" method="_on_area_entered"]
+[connection signal="body_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapEntities/@Area2D@25417" to="TileMapEntities/@Area2D@25417" method="_on_body_entered"]

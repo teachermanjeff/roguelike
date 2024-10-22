@@ -25,7 +25,7 @@ func update_path() -> void:
 		return
 
 	var path = Globals.astar_grid.get_point_path(start_cell, end_cell, false)
-	if path.size() > 0 and path[1] == Vector2(end_cell):
+	if path.size() > 0 and path[1] == Vector2(end_cell) or path.size() > 10:
 		return
 
 	move_along_path(path)

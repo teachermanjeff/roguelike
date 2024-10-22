@@ -30,7 +30,7 @@ load_path = "res://.godot/imported/vingette.png-9bd9a78a2846f47279dd66738e58b2f5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0hbf"]
 size = Vector2(6.4, 6.4)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 scale = Vector2(5, 5)
 motion_mode = 1
