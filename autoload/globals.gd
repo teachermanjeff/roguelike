@@ -4,15 +4,12 @@ const MOVE_DISTANCE: int = 32
 const MOVE_DELAY: float = 0.2
 
 var astar_grid: AStarGrid2D = AStarGrid2D.new()
-var created_grid = false
 
-func _process(_delta):
-	if created_grid: return
-	
-	var tile_map = get_node("/root/Main/TileMapGround")
-
+func create_grid(pathToMap: String):
+	var tile_map = get_node(pathToMap)
 	if !tile_map: return
 
+	astar_grid.clear()
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
 	astar_grid.cell_size = Vector2i(Globals.MOVE_DISTANCE, Globals.MOVE_DISTANCE)
@@ -27,5 +24,3 @@ func _process(_delta):
 			var tile_id = tile_map.get_cell_alternative_tile(cell)
 			if tile_id == 2 and astar_grid.is_in_boundsv(Vector2i(cell.x + 1, cell.y)):
 				astar_grid.set_point_solid(Vector2i(cell.x + 1, cell.y), true)
-
-	created_grid = true
