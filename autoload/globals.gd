@@ -3,10 +3,13 @@ extends Node
 const MOVE_DISTANCE: int = 32
 const MOVE_DELAY: float = 0.2
 
-var astar_grid: AStarGrid2D
+var astar_grid: AStarGrid2D = AStarGrid2D.new()
 
 func _ready():
 	var tile_map = get_node("/root/Main/TileMapGround")
+	
+	if !tile_map: return
+
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
 	astar_grid.cell_size = Vector2i(Globals.MOVE_DISTANCE, Globals.MOVE_DISTANCE)
