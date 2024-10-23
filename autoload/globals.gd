@@ -7,9 +7,11 @@ var astar_grid: AStarGrid2D = AStarGrid2D.new()
 var created_grid = false
 
 func _process(_delta):
+	if created_grid: return
+	
 	var tile_map = get_node("/root/Main/TileMapGround")
 
-	if !tile_map or created_grid: return
+	if !tile_map: return
 
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
