@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxb0s8i2auj25"]
+
+[ext_resource type="Texture2D" path="res://2D ascii roguelike game (1).png" id="1_58ixn"]
+[ext_resource type="Script" path="res://button.gd" id="2_5r2gt"]
+
+[sub_resource type="Theme" id="Theme_e5spi"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="2dAsciiRoguelikeGame(1)" type="Sprite2D" parent="."]
+position = Vector2(369.5, 338.5)
+scale = Vector2(1.16759, 0.849074)
+texture = ExtResource("1_58ixn")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.025
+anchor_bottom = 0.5
+offset_left = 291.0
+offset_top = 339.0
+offset_right = 352.0
+offset_bottom = 377.0
+theme = SubResource("Theme_e5spi")
+text = "start"
+script = ExtResource("2_5r2gt")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
