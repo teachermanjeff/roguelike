@@ -21,4 +21,4 @@ tile_set = ExtResource("2_py0nx")
 position = Vector2(400, 960)
 
 [connection signal="body_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapEntities/@Area2D@25417" to="TileMapEntities/@Area2D@25417" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapEntities/@Area2D@19162" to="TileMapEntities/@Area2D@19162" method="_on_body_entered"]
