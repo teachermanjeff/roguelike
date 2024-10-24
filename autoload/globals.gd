@@ -3,14 +3,21 @@ extends Node
 const MOVE_DISTANCE: int = 32
 const MOVE_DELAY: float = 0.2
 
-var astar_grid: AStarGrid2D = AStarGrid2D.new()
+var astar_grid: AStarGrid2D
 
-func create_grid(pathToMap: String):
+func get_astar_grid(pathToMap = "/root/Main/TileMapGround"): 
+	if !astar_grid: return create_grid(pathToMap)
+	return astar_grid
+
+func create_grid(pathToMap):
 	var tile_map = get_node(pathToMap)
 	if !tile_map: return
 
-	astar_grid.clear()
-	astar_grid = AStarGrid2D.new()
+	if (astar_grid):
+		astar_grid.clear()
+	else:
+		astar_grid = AStarGrid2D.new()
+
 	astar_grid.region = tile_map.get_used_rect()
 	astar_grid.cell_size = Vector2i(Globals.MOVE_DISTANCE, Globals.MOVE_DISTANCE)
 	astar_grid.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
@@ -24,3 +31,5 @@ func create_grid(pathToMap: String):
 			var tile_id = tile_map.get_cell_alternative_tile(cell)
 			if tile_id == 2 and astar_grid.is_in_boundsv(Vector2i(cell.x + 1, cell.y)):
 				astar_grid.set_point_solid(Vector2i(cell.x + 1, cell.y), true)
+
+	return astar_grid

@@ -19,3 +19,6 @@ tile_set = ExtResource("2_py0nx")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
 position = Vector2(400, 960)
+
+[connection signal="body_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapEntities/@Area2D@20491" to="TileMapEntities/@Area2D@20491" method="_on_body_entered"]

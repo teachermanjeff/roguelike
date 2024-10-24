@@ -24,7 +24,7 @@ func update_path() -> void:
 	if start_cell == end_cell:
 		return
 
-	var path = Globals.astar_grid.get_point_path(start_cell, end_cell, false)
+	var path = Globals.get_astar_grid().get_point_path(start_cell, end_cell, false)
 	if path.size() > 0 and path[1] == Vector2(end_cell) or path.size() > 10:
 		return
 
