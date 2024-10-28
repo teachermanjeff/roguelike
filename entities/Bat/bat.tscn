@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/goblin/goblin.gd" id="1_j3b3m"]
 [ext_resource type="Shader" path="res://tint.gdshader" id="2_blcod"]
-[ext_resource type="Texture2D" uid="uid://dvresu3b2lblh" path="res://sprites/letters/g_symbol.png" id="3_2r5tj"]
+[ext_resource type="Texture2D" uid="uid://d4gyrk7ursa8v" path="res://sprites/letters/b_symbol.png" id="3_41j8o"]
 [ext_resource type="Script" path="res://entities/goblin/area_2d.gd" id="4_5rbh8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3it"]
@@ -15,7 +15,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_ldqst")
 
 [sub_resource type="Gradient" id="Gradient_fs4e7"]
-colors = PackedColorArray(0, 0, 0, 1, 0.0862745, 0.396078, 0.203922, 1)
+offsets = PackedFloat32Array(0, 0.97541)
+colors = PackedColorArray(0, 0, 0, 1, 0.242889, 0.16908, 0.833069, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6ri0u"]
 gradient = SubResource("Gradient_fs4e7")
@@ -27,7 +28,7 @@ shader_parameter/pallete = SubResource("GradientTexture1D_6ri0u")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku37"]
 size = Vector2(6.4, 6.4)
 
-[node name="Goblin" type="CharacterBody2D"]
+[node name="bat" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
 motion_mode = 1
@@ -47,7 +48,7 @@ texture = SubResource("GradientTexture1D_pb6bw")
 material = SubResource("ShaderMaterial_tu5oy")
 position = Vector2(-2.83122e-07, -2.83122e-07)
 scale = Vector2(0.914286, 0.914286)
-texture = ExtResource("3_2r5tj")
+texture = ExtResource("3_41j8o")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_5rbh8")
