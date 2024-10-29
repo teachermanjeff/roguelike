@@ -1,17 +1,16 @@
 extends Node2D
 
-@onready var tile_map: TileMapLayer = $TileMapGround
-@onready var camera = $Player/Camera2D
-@onready var player = $Player
+@export var tile_map: TileMapLayer
+@export var player:  Node2D
 # @onready var spawner = $enemy_spawner
 
 # @onready var card_pack = load("res://src/cards/card_pack/card_pack_pickup.tscn")
 # @onready var exit = load("res://src/proc_gen/exit.tscn")
 
-const ROOM_SIZE = Vector2(30, 16)
-const HALLWAY_LENGTH = Vector2(20, 15)
+const ROOM_SIZE = Vector2(6, 5)
+const HALLWAY_LENGTH = Vector2(15, 15)
 
-const START_RECT_SIZE = Vector2(20, 17)
+const START_RECT_SIZE = Vector2(5, 7)
 
 const EXTRA_RECT_NUM = 10
 const EXTRA_RECT_SIZE_MIN = Vector2(5, 5)
@@ -32,34 +31,15 @@ var bot_right = Vector2.ZERO
 
 var rooms = Dictionary()
 var walls = []
-var camera_tween: Tween
 
 var exit_exists: bool = false
 func _ready():
 	generate_level()
 	display_level()
 	tile_map.set_cell(Vector2(1, 1), 2, Vector2(0, 0), WALL_TILE_SET_ID)
-	# add_packs_to_rooms()
-	# add_exit()
-
-func _process(_delta):
-	update_camera()
 
 var currentRoom: Vector2
 var currentRoomWall: Vector2
-
-func update_camera():
-	# Beautiful tweening system is courtesy of Inbesticorp™️©️®️ 🔥🔥🔥
-	for room in rooms.values():
-		if is_player_in_room(room):
-			if currentRoom == room.glo_pos: return
-			currentRoom = room.glo_pos
-			var camera_tween = create_tween()
-			camera_tween.set_ease(2).tween_property(camera, "position", room.glo_pos, 0.5)
-			return
-	currentRoom = Vector2(69420, 69420)
-	var camera_tween = create_tween()
-	camera_tween.set_ease(2).tween_property(camera, "position", player.global_position, 0.5)
 
 func is_player_in_room(room):
 	return (
@@ -166,74 +146,11 @@ func fill_map():
 					tile_map.set_cell(tile_coord, 2, Vector2(0, 0), WALL_TILE_SET_ID)
 					walls.push_back(tile_coord)
 				else: tile_map.set_cell(tile_coord, 2, Vector2(0, 0), VOID_TILE_SET_ID)
-	assignWalls()
-
-func assignWalls():
-	# Ugly code incoming
-	for wall in walls:
-		var number = 0;
-		if tile_map.get_cell_alternative_tile(Vector2(wall.x, wall.y - 1)) == VOID_TILE_SET_ID:
-			number += 1
-		if tile_map.get_cell_alternative_tile(Vector2(wall.x + 1, wall.y)) == VOID_TILE_SET_ID:
-			number += 2
-		if tile_map.get_cell_alternative_tile(Vector2(wall.x, wall.y + 1)) == VOID_TILE_SET_ID:
-			number += 4
-		if tile_map.get_cell_alternative_tile(Vector2(wall.x - 1, wall.y)) == VOID_TILE_SET_ID:
-			number += 8
-		
-		match number:
-			1:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			2:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			3:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			4:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			6:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			8:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			9:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			12:
-				tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-			0:
-				if tile_map.get_cell_alternative_tile(Vector2(wall.x - 1, wall.y - 1)) == FLOOR_TILE_SET_ID:
-					tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-				elif tile_map.get_cell_alternative_tile(Vector2(wall.x + 1, wall.y + 1)) == FLOOR_TILE_SET_ID:
-					tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-				elif tile_map.get_cell_alternative_tile(Vector2(wall.x - 1, wall.y + 1)) == FLOOR_TILE_SET_ID:
-					tile_map.set_cell(wall, 2, Vector2(0, 0), WALL_TILE_SET_ID)
-				elif tile_map.get_cell_alternative_tile(Vector2(wall.x + 1, wall.y - 1)) == FLOOR_TILE_SET_ID:
-					tile_map.set_cell(wall, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
-				else: tile_map.set_cell(wall, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
-
-func add_packs_to_rooms() -> void:
-	for r in rooms.values():
-		# so that people aren't confused when they open the game
-		if r.grid_position == Vector2.ZERO: continue
-
-func add_exit() -> void:
-	for r in rooms.values():
-
-		if exit_exists: return
-		if (randi_range(1, rooms.size()) == 1):
-			
-			# var new_exit = exit.instantiate()
-			# new_exit.global_position = r.glo_pos
-			# add_child(new_exit)
-			exit_exists = true
-	if not exit_exists:
-		pass
-		# var new_exit = card_pack.instantiate()
-		# new_exit.global_position = player.global_position
-		# add_child(new_exit)
 
 func adj_to_floor(coord) -> bool:
 	var dirs = [Vector2(1, 1), Vector2(0, 1), Vector2(1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(-1, -1), Vector2(-1, 1), Vector2(1, -1)]
 	for dir in dirs:
-		if tile_map.get_cell_alternative_tile(coord + dir) == WALL_TILE_SET_ID:
+		if tile_map.get_cell_alternative_tile(coord + dir) == FLOOR_TILE_SET_ID:
 			return true
 	return false
 

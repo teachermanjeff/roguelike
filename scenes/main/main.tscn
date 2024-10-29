@@ -5,22 +5,28 @@
 [ext_resource type="TileSet" uid="uid://ttaux60r73ew" path="res://scenes/entities.tres" id="2_py0nx"]
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="2_qh1r5"]
 
-[node name="Main" type="Node2D"]
-position = Vector2(-400, -960)
-script = ExtResource("1_evxty")
+[node name="Node2D" type="Node2D"]
 
-[node name="TileMapGround" type="TileMapLayer" parent="."]
+[node name="Main" type="Node2D" parent="."]
+position = Vector2(-400, -960)
+
+[node name="TileMapGround" type="TileMapLayer" parent="Main"]
 position = Vector2(416, 944)
 tile_map_data = PackedByteArray(0, 0, 253, 255, 226, 255, 2, 0, 0, 0, 0, 0, 1, 0)
 tile_set = ExtResource("1_fe1jj")
 
-[node name="TileMapEntities" type="TileMapLayer" parent="."]
+[node name="TileMapEntities" type="TileMapLayer" parent="Main"]
 position = Vector2(416, 944)
 tile_map_data = PackedByteArray(0, 0, 247, 255, 254, 255, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 252, 255, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0, 9, 0, 249, 255, 0, 0, 0, 0, 0, 0, 3, 0, 4, 0, 255, 255, 0, 0, 0, 0, 0, 0, 2, 0)
 tile_set = ExtResource("2_py0nx")
 
-[node name="Player" parent="." instance=ExtResource("2_qh1r5")]
+[node name="Player" parent="Main" instance=ExtResource("2_qh1r5")]
 position = Vector2(400, 960)
 
-[connection signal="body_entered" from="TileMapEntities/Coin" to="TileMapEntities/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapEntities/@Area2D@17706" to="TileMapEntities/@Area2D@17706" method="_on_body_entered"]
+[node name="Generator" type="Node2D" parent="." node_paths=PackedStringArray("tile_map", "player")]
+script = ExtResource("1_evxty")
+tile_map = NodePath("../Main/TileMapGround")
+player = NodePath("../Main/Player")
+
+[connection signal="body_entered" from="Main/TileMapEntities/@Area2D@20947" to="Main/TileMapEntities/@Area2D@20947" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/TileMapEntities/@Area2D@20948" to="Main/TileMapEntities/@Area2D@20948" method="_on_body_entered"]
