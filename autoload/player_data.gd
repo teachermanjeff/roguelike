@@ -1,6 +1,6 @@
 extends Node
 
-var player_health = 100
+var player_health = 5
 var score = 0
 
 func take_damage(amount: int, death_message: String) -> void:
@@ -9,3 +9,4 @@ func take_damage(amount: int, death_message: String) -> void:
 	if player_health <= 0:
 		print(death_message)
 		get_tree().reload_current_scene()
+		player_health = 5

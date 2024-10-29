@@ -1,20 +1,21 @@
 extends Node2D
 
 @export var tile_map: TileMapLayer
+@export var entity_map: TileMapLayer
 @export var player:  Node2D
 # @onready var spawner = $enemy_spawner
 
 # @onready var card_pack = load("res://src/cards/card_pack/card_pack_pickup.tscn")
 # @onready var exit = load("res://src/proc_gen/exit.tscn")
 
-const ROOM_SIZE = Vector2(6, 5)
-const HALLWAY_LENGTH = Vector2(15, 15)
+const ROOM_SIZE = Vector2(3, 2)
+const HALLWAY_LENGTH = Vector2(13, 13)
 
-const START_RECT_SIZE = Vector2(5, 7)
+const START_RECT_SIZE = Vector2(2, 3)
 
 const EXTRA_RECT_NUM = 10
 const EXTRA_RECT_SIZE_MIN = Vector2(5, 5)
-const EXTRA_RECT_SIZE_MAX = Vector2(19, 8)
+const EXTRA_RECT_SIZE_MAX = Vector2(8, 4)
 
 const MAX_ROOMS = 20
 
@@ -23,6 +24,10 @@ const CELL_SIZE = ROOM_SIZE + HALLWAY_LENGTH
 const FLOOR_TILE_SET_ID = 5
 const WALL_TILE_SET_ID = 2
 const VOID_TILE_SET_ID = -1
+
+const GOBLIN_TILE_SET_ID = 3
+const CHEST_TILE_SET_ID = 2
+const COIN_TILE_SET_ID = 1
 
 var rooms_left = MAX_ROOMS
 
@@ -36,7 +41,6 @@ var exit_exists: bool = false
 func _ready():
 	generate_level()
 	display_level()
-	tile_map.set_cell(Vector2(1, 1), 2, Vector2(0, 0), WALL_TILE_SET_ID)
 
 var currentRoom: Vector2
 var currentRoomWall: Vector2
@@ -134,6 +138,12 @@ func paint_rect(rect_size, rect_pos):
 		for y in rect_size.y:
 			var tile_coord = rect_pos + Vector2(x, y)
 			tile_map.set_cell(tile_coord, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
+			if randf_range(0, 1) < 0.002:
+				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), GOBLIN_TILE_SET_ID)
+			elif randf_range(0, 1) < 0.0005:
+				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), COIN_TILE_SET_ID)
+			elif randf_range(0, 1) < 0.0001:
+				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), CHEST_TILE_SET_ID)
 
 func fill_map():
 	bot_right += ROOM_SIZE
