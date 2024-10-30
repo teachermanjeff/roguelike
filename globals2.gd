@@ -1,8 +1,8 @@
 extends Node
 
-const MOVE_DISTANCE: int = 32
+const MOVE_DISTANCE: int = 64
 const MOVE_DELAY: float = 0.2
-const MOVE_DISTANCE2: int = 64
+
 var astar_grid: AStarGrid2D
 
 func get_astar_grid(pathToMap = "/root/Main/TileMapGround"): 

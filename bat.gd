@@ -18,8 +18,8 @@ func _process(_delta):
 		update_path()
 
 func update_path() -> void:
-	start_cell = global_position / Globals.MOVE_DISTANCE
-	end_cell = player_node.global_position / Globals.MOVE_DISTANCE
+	start_cell = global_position / Globals.MOVE_DISTANCE2
+	end_cell = player_node.global_position / Globals.MOVE_DISTANCE2
 	
 	if start_cell == end_cell:
 		return
@@ -34,12 +34,12 @@ func move_along_path(path: PackedVector2Array):
 	if path.size() > 0:
 		var next_point = path[1]
 		var direction = (next_point - global_position).normalized()
-		move_and_collide(direction * Globals.MOVE_DISTANCE)
+		move_and_collide(direction * Globals.MOVE_DISTANCE2)
 		snap_to_grid()
 		disable_movement()
 
 func snap_to_grid():
-	global_position = global_position.snapped(Vector2(Globals.MOVE_DISTANCE, Globals.MOVE_DISTANCE))
+	global_position = global_position.snapped(Vector2(Globals.MOVE_DISTANCE2, Globals.MOVE_DISTANCE2))
 
 func disable_movement():
 	can_move = false

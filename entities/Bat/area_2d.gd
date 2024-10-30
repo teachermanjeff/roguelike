@@ -2,7 +2,7 @@ extends Area2D
 
 var timer = Timer.new()
 var colliding_player = false
-var health = 5
+var health = 100000000
 
 func _ready():
 	timer.wait_time = Globals.MOVE_DELAY * 1
