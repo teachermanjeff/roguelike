@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci8pgdyjcrgyl"]
+
+[ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="1_qwmcv"]
+[ext_resource type="Script" path="res://scenes/death/death.gd" id="1_vtd0q"]
+
+[sub_resource type="Gradient" id="Gradient_c0yux"]
+offsets = PackedFloat32Array(0, 0.0180723)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0.105882, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h2b5y"]
+gradient = SubResource("Gradient_c0yux")
+
+[node name="Death" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(344, 301)
+scale = Vector2(3.625, 616.5)
+texture = SubResource("GradientTexture1D_h2b5y")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 203.0
+offset_top = 224.0
+offset_right = 581.0
+offset_bottom = 397.0
+theme_override_fonts/font = ExtResource("1_qwmcv")
+theme_override_font_sizes/font_size = 35
+text = "You Suck!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 148.0
+offset_top = 362.0
+offset_right = 637.0
+offset_bottom = 469.0
+theme_override_fonts/font = ExtResource("1_qwmcv")
+text = "Click Here to Play Again!"
+script = ExtResource("1_vtd0q")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
