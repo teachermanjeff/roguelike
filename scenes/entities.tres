@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://b4ffkbrai8hw3" path="res://entities/coin/coin.tscn" id="1_831yp"]
 [ext_resource type="PackedScene" uid="uid://bhwyo70q05ktj" path="res://entities/chest/chest.tscn" id="2_i3n75"]
 [ext_resource type="PackedScene" uid="uid://0cw2r4h8yxil" path="res://entities/goblin/goblin.tscn" id="2_pcpsw"]
-[ext_resource type="PackedScene" uid="uid://calpe63dvgqfd" path="res://entities/Bat/bat.tscn" id="4_yuu0j"]
+[ext_resource type="PackedScene" uid="uid://calpe63dvgqfd" path="res://entities/bat/bat.tscn" id="4_ix7md"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lt28c"]
 scenes/1/scene = ExtResource("1_831yp")
 scenes/2/scene = ExtResource("2_i3n75")
 scenes/3/scene = ExtResource("2_pcpsw")
-scenes/4/scene = ExtResource("4_yuu0j")
+scenes/4/scene = ExtResource("4_ix7md")
 
 [resource]
 tile_size = Vector2i(32, 32)

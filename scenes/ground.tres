@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cyboy1cj3nmav"]
 
-[ext_resource type="PackedScene" uid="uid://efn3m2ivtlfb" path="res://entities/wall.tscn" id="1_5c47w"]
+[ext_resource type="PackedScene" uid="uid://efn3m2ivtlfb" path="res://environment/wall.tscn" id="1_5c47w"]
 [ext_resource type="PackedScene" uid="uid://cgad7w8ewmoda" path="res://environment/grass.tscn" id="2_23xqq"]
 [ext_resource type="PackedScene" uid="uid://7npo7qabmygk" path="res://environment/empty_ground.tscn" id="3_i2mai"]
 
