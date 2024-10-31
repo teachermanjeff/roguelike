@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxb0s8i2auj25"]
 
-[ext_resource type="Texture2D" uid="uid://canjpwttpgwfx" path="res://34.jpg" id="1_c7kfn"]
-[ext_resource type="Texture2D" uid="uid://d2bc2fqjajki2" path="res://scenes/intro/2D ascii roguelike game (1).png" id="2_sh3w3"]
 [ext_resource type="Texture2D" uid="uid://if1p6h7r2cwg" path="res://Capture.PNG" id="3_nksqv"]
 [ext_resource type="Script" path="res://scenes/intro/button.gd" id="4_dw7qk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5c6r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umbuy"]
 
 [sub_resource type="Theme" id="Theme_e5spi"]
 
@@ -14,12 +16,12 @@ offset_bottom = 40.0
 [node name="34" type="Sprite2D" parent="."]
 position = Vector2(397, 323)
 scale = Vector2(1.08899, 1.3413)
-texture = ExtResource("1_c7kfn")
+texture = SubResource("CompressedTexture2D_i5c6r")
 
 [node name="2dAsciiRoguelikeGame(1)" type="Sprite2D" parent="."]
 position = Vector2(-2223, 1025)
 scale = Vector2(1.16759, 0.849074)
-texture = ExtResource("2_sh3w3")
+texture = SubResource("CompressedTexture2D_umbuy")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 visible = false
