@@ -138,6 +138,7 @@ func paint_rect(rect_size, rect_pos):
 			tile_map.set_cell(tile_coord, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
 			if randf_range(0, 1) < 0.002:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), GOBLIN_TILE_SET_ID)
+			elif randf_range(0, 1) < 0.001:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), BAT_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.0005:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), COIN_TILE_SET_ID)
