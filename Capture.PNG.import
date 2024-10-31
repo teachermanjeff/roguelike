@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2bc2fqjajki2"
-path="res://.godot/imported/2D ascii roguelike game (1).png-a6459e60a7bbab9f001684de8269d383.ctex"
+uid="uid://if1p6h7r2cwg"
+path="res://.godot/imported/Capture.PNG-47574265afac29097782b53d7a5b27a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D ascii roguelike game (1).png"
-dest_files=["res://.godot/imported/2D ascii roguelike game (1).png-a6459e60a7bbab9f001684de8269d383.ctex"]
+source_file="res://Capture.PNG"
+dest_files=["res://.godot/imported/Capture.PNG-47574265afac29097782b53d7a5b27a4.ctex"]
 
 [params]
 

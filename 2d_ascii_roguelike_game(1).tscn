@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwqr0dd8k5pd6"]
+
+[ext_resource type="Texture2D" uid="uid://d2bc2fqjajki2" path="res://scenes/intro/2D ascii roguelike game (1).png" id="1_lu0ad"]
+[ext_resource type="Texture2D" uid="uid://canjpwttpgwfx" path="res://34.jpg" id="2_mo7td"]
+
+[sub_resource type="Theme" id="Theme_6olfv"]
+
+[node name="2dAsciiRoguelikeGame(1)" type="Sprite2D"]
+position = Vector2(-2511, 1122)
+texture = ExtResource("1_lu0ad")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="34" type="Sprite2D" parent="."]
+position = Vector2(2904, -818)
+scale = Vector2(1.07065, 1.31957)
+texture = ExtResource("2_mo7td")
+
+[node name="Button" type="Button" parent="34"]
+offset_left = -205.483
+offset_top = -25.0081
+offset_right = 286.517
+offset_bottom = 55.9919
+theme = SubResource("Theme_6olfv")
+text = "Play"
