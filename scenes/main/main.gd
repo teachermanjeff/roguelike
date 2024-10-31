@@ -3,10 +3,6 @@ extends Node2D
 @export var tile_map: TileMapLayer
 @export var entity_map: TileMapLayer
 @export var player:  Node2D
-# @onready var spawner = $enemy_spawner
-
-# @onready var card_pack = load("res://src/cards/card_pack/card_pack_pickup.tscn")
-# @onready var exit = load("res://src/proc_gen/exit.tscn")
 
 const ROOM_SIZE = Vector2(3, 2)
 const HALLWAY_LENGTH = Vector2(13, 13)
@@ -28,6 +24,7 @@ const VOID_TILE_SET_ID = -1
 const GOBLIN_TILE_SET_ID = 3
 const CHEST_TILE_SET_ID = 2
 const COIN_TILE_SET_ID = 1
+const BAT_TILE_SET_ID = 4
 
 var rooms_left = MAX_ROOMS
 
@@ -63,6 +60,7 @@ func generate_level():
 		leaf_rooms = next_leaf_rooms
 
 func add_connections(room) -> Array:
+	@warning_ignore("integer_division")
 	var con_min = 1 if rooms_left <= MAX_ROOMS / 2 else 3
 	var connect_num = min(randi_range(con_min, 4), rooms_left)
 	var vects = [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]
@@ -140,10 +138,13 @@ func paint_rect(rect_size, rect_pos):
 			tile_map.set_cell(tile_coord, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
 			if randf_range(0, 1) < 0.002:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), GOBLIN_TILE_SET_ID)
+				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), BAT_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.0005:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), COIN_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.0001:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), CHEST_TILE_SET_ID)
+				
+
 
 func fill_map():
 	bot_right += ROOM_SIZE
