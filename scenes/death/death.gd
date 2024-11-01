@@ -1,6 +1,6 @@
 extends Button
 
-var mainScene = preload("res://scenes/main/main.tscn")
+var mainScene = preload("res://scenes/title/title.tscn")
 
 func _on_button_down() -> void:
 	PlayerData.player_health = 5
