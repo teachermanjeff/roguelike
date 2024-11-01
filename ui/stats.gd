@@ -1,6 +1,7 @@
 extends Node2D
 
 var score
+var health
 var sprites = {
 	"0": preload("res://sprites/digits/zero_symbol.png"),
 	"1": preload("res://sprites/digits/one_symbol.png"),
@@ -15,14 +16,32 @@ var sprites = {
 }
 
 func _process(_delta):
-	var new_score = str(PlayerData.player_health)
-	if score == new_score:
+	change_health()
+	change_score()
+
+func change_score():
+	if score == str(PlayerData.score):
 		return
-	score = new_score
+	score = str(PlayerData.score)
 	
 	var digits = score.split('')
 	var ones_node: Sprite2D = $Score/Ones
 	var tens_node: Sprite2D = $Score/Tens
+	
+	ones_node.texture = sprites.get(digits[digits.size() - 1])
+	if digits.size() > 1:
+		tens_node.texture = sprites.get(digits[digits.size() - 2])
+	else:
+		tens_node.texture = sprites.get("0")
+
+func change_health():
+	if health == str(PlayerData.player_health):
+		return
+	health = str(PlayerData.player_health)
+	
+	var digits = health.split('')
+	var ones_node: Sprite2D = $Health/Ones
+	var tens_node: Sprite2D = $Health/Tens
 	
 	ones_node.texture = sprites.get(digits[digits.size() - 1])
 	if digits.size() > 1:

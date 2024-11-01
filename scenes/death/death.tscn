@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci8pgdyjcrgyl"]
+[gd_scene load_steps=7 format=3 uid="uid://ci8pgdyjcrgyl"]
 
 [ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="1_qwmcv"]
 [ext_resource type="Script" path="res://scenes/death/death.gd" id="1_vtd0q"]
@@ -10,6 +10,11 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0.105882, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_h2b5y"]
 gradient = SubResource("Gradient_c0yux")
 
+[sub_resource type="LabelSettings" id="LabelSettings_srw5f"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_f23rp"]
+
 [node name="Death" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,22 +23,34 @@ scale = Vector2(3.625, 616.5)
 texture = SubResource("GradientTexture1D_h2b5y")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 203.0
+offset_left = 144.0
 offset_top = 224.0
-offset_right = 581.0
-offset_bottom = 397.0
+offset_right = 656.0
+offset_bottom = 288.0
 theme_override_fonts/font = ExtResource("1_qwmcv")
 theme_override_font_sizes/font_size = 35
 text = "You Suck!"
+label_settings = SubResource("LabelSettings_srw5f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reason" type="Label" parent="."]
+offset_left = 144.0
+offset_top = 288.0
+offset_right = 656.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("1_qwmcv")
+theme_override_font_sizes/font_size = 35
+label_settings = SubResource("LabelSettings_f23rp")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = 148.0
-offset_top = 362.0
-offset_right = 637.0
-offset_bottom = 469.0
+offset_left = 304.0
+offset_top = 384.0
+offset_right = 496.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("1_qwmcv")
-text = "Click Here to Play Again!"
+text = "Restart"
 script = ExtResource("1_vtd0q")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

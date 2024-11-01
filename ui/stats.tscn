@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyw4i0ydj2pxt"]
+[gd_scene load_steps=6 format=3 uid="uid://cyw4i0ydj2pxt"]
 
 [ext_resource type="Script" path="res://ui/stats.gd" id="1_xdj2f"]
 [ext_resource type="Texture2D" uid="uid://ca28egttols1s" path="res://sprites/coins_string.png" id="2_j0knt"]
+[ext_resource type="Texture2D" uid="uid://cr81qtytdbo4w" path="res://sprites/health_string.png" id="3_lqmeh"]
 
 [sub_resource type="Gradient" id="Gradient_lor5d"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -13,24 +14,46 @@ gradient = SubResource("Gradient_lor5d")
 texture_filter = 1
 script = ExtResource("1_xdj2f")
 
-[node name="BG" type="Sprite2D" parent="."]
-position = Vector2(672, 592)
-scale = Vector2(1, 31.9999)
-texture = SubResource("GradientTexture1D_y5k28")
-
 [node name="Score" type="Node2D" parent="."]
+
+[node name="BG" type="Sprite2D" parent="Score"]
+position = Vector2(672, 48)
+scale = Vector2(1, 32)
+texture = SubResource("GradientTexture1D_y5k28")
 
 [node name="Tens" type="Sprite2D" parent="Score"]
 texture_filter = 1
-position = Vector2(752, 592)
+position = Vector2(752, 48)
 scale = Vector2(4.57143, 4.57143)
 
 [node name="Ones" type="Sprite2D" parent="Score"]
 texture_filter = 1
-position = Vector2(784, 592)
+position = Vector2(784, 48)
 scale = Vector2(4.57143, 4.57142)
 
 [node name="Text" type="Sprite2D" parent="Score"]
-position = Vector2(640, 592)
+position = Vector2(640, 47.9999)
 scale = Vector2(4.57143, 4.571)
 texture = ExtResource("2_j0knt")
+
+[node name="Health" type="Node2D" parent="."]
+
+[node name="BG" type="Sprite2D" parent="Health"]
+position = Vector2(656, 16)
+scale = Vector2(1.125, 32)
+texture = SubResource("GradientTexture1D_y5k28")
+
+[node name="Tens" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(752, 16)
+scale = Vector2(4.57143, 4.57143)
+
+[node name="Ones" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(784, 16)
+scale = Vector2(4.57143, 4.57142)
+
+[node name="Text" type="Sprite2D" parent="Health"]
+position = Vector2(624, 15.9999)
+scale = Vector2(4.57143, 4.571)
+texture = ExtResource("3_lqmeh")

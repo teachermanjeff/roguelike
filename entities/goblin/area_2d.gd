@@ -23,6 +23,7 @@ func _on_move_timeout():
 	if colliding_player:
 		health -= 1
 		if health <= 0:
+			PlayerData.score += 1
 			get_parent().queue_free()
 		PlayerData.take_damage(1, "You were killed by a goblin!")
 		timer.start()
