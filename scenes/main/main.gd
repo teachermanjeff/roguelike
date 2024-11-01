@@ -142,7 +142,8 @@ func paint_rect(rect_size, rect_pos):
 					for ny in range(-5 / 2, 5 / 2 + 1):
 						if randf_range(0, 1) < 0.2:
 							var new_tile_coord = tile_coord + Vector2(nx, ny)
-							tile_map.set_cell(new_tile_coord, 2, Vector2(0, 0), GRASS_TILE_SET_ID)
+							if tile_map.get_cell_alternative_tile(new_tile_coord) == FLOOR_TILE_SET_ID:
+								tile_map.set_cell(new_tile_coord, 2, Vector2(0, 0), GRASS_TILE_SET_ID)
 			if randf_range(0, 1) < 0.002:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), GOBLIN_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.001:
