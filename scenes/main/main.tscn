@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbgo33qbgobvb"]
+[gd_scene load_steps=7 format=3 uid="uid://dbgo33qbgobvb"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_evxty"]
 [ext_resource type="TileSet" uid="uid://cyboy1cj3nmav" path="res://scenes/ground.tres" id="1_fe1jj"]
 [ext_resource type="TileSet" uid="uid://ttaux60r73ew" path="res://scenes/entities.tres" id="2_py0nx"]
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="2_qh1r5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbbnn"]
+size = Vector2(400, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e550u"]
+size = Vector2(70, 400)
 
 [node name="Main" type="Node2D"]
 
@@ -23,3 +29,15 @@ position = Vector2(16, -16)
 tile_set = ExtResource("2_py0nx")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Player"]
+position = Vector2(-72.3999, 0)
+scale = Vector2(0.0382812, 2.6)
+shape = SubResource("RectangleShape2D_cbbnn")
+action = "move left"
+
+[node name="right" type="TouchScreenButton" parent="Player"]
+position = Vector2(73, 0)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_e550u")
+action = "move right"
