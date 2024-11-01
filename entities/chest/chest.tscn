@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhwyo70q05ktj"]
+[gd_scene load_steps=10 format=3 uid="uid://bhwyo70q05ktj"]
 
 [ext_resource type="Shader" path="res://tint.gdshader" id="2_q7sgk"]
 [ext_resource type="Texture2D" uid="uid://bnmnaexqs6wdx" path="res://sprites/letters/h_symbol.png" id="3_3ylj5"]
 [ext_resource type="Script" path="res://entities/chest/area_2d.gd" id="3_t7esw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3it"]
-size = Vector2(5.4, 5.4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku37"]
+size = Vector2(6.4, 6.4)
 
 [sub_resource type="Gradient" id="Gradient_ldqst"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -23,35 +23,24 @@ gradient = SubResource("Gradient_fs4e7")
 shader = ExtResource("2_q7sgk")
 shader_parameter/pallete = SubResource("GradientTexture1D_6ri0u")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku37"]
-size = Vector2(6.4, 6.4)
-
-[node name="chest" type="CharacterBody2D"]
+[node name="Chest" type="Area2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
-motion_mode = 1
+script = ExtResource("3_t7esw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.83122e-07, -2.83122e-07)
-shape = SubResource("RectangleShape2D_yq3it")
-one_way_collision_margin = 0.0
+position = Vector2(-3.8147e-07, -3.8147e-07)
+shape = SubResource("RectangleShape2D_2ku37")
 
 [node name="BG" type="Sprite2D" parent="."]
-position = Vector2(1.78814e-07, 1.71363e-07)
+position = Vector2(8.9407e-07, 8.56815e-07)
 scale = Vector2(0.025, 6.4)
 texture = SubResource("GradientTexture1D_pb6bw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_tu5oy")
-position = Vector2(-2.83122e-07, -2.83122e-07)
-scale = Vector2(0.914286, 0.914286)
+position = Vector2(-1.41561e-06, -1.41561e-06)
+scale = Vector2(0.914, 0.914)
 texture = ExtResource("3_3ylj5")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_t7esw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.8147e-07, -3.8147e-07)
-shape = SubResource("RectangleShape2D_2ku37")
-
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

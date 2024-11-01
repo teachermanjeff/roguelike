@@ -20,8 +20,8 @@ font_size = 32
 [node name="Death" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(382, 298)
-scale = Vector2(3.625, 616.5)
+position = Vector2(396, 301)
+scale = Vector2(3.21875, 616.5)
 texture = SubResource("GradientTexture1D_h2b5y")
 
 [node name="Label" type="Label" parent="."]

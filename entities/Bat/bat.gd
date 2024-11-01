@@ -8,7 +8,7 @@ var end_cell: Vector2i
 
 func _ready():
 	player_node = get_node("/root/Main/Player")
-	timer.wait_time = Globals.MOVE_DELAY
+	timer.wait_time = Globals.MOVE_DELAY / 1.2
 	timer.one_shot = true
 	timer.connect("timeout", _on_move_timeout)
 	add_child(timer)
@@ -18,8 +18,8 @@ func _process(_delta):
 		update_path()
 
 func update_path() -> void:
-	start_cell = global_position / Globals.MOVE_DISTANCE2
-	end_cell = player_node.global_position / Globals.MOVE_DISTANCE2
+	start_cell = global_position / Globals.MOVE_DISTANCE
+	end_cell = player_node.global_position / Globals.MOVE_DISTANCE
 	
 	if start_cell == end_cell:
 		return
@@ -34,12 +34,12 @@ func move_along_path(path: PackedVector2Array):
 	if path.size() > 0:
 		var next_point = path[1]
 		var direction = (next_point - global_position).normalized()
-		move_and_collide(direction * Globals.MOVE_DISTANCE2)
+		move_and_collide(direction * Globals.MOVE_DISTANCE)
 		snap_to_grid()
 		disable_movement()
 
 func snap_to_grid():
-	global_position = global_position.snapped(Vector2(Globals.MOVE_DISTANCE2, Globals.MOVE_DISTANCE2))
+	global_position = global_position.snapped(Vector2(Globals.MOVE_DISTANCE, Globals.MOVE_DISTANCE))
 
 func disable_movement():
 	can_move = false

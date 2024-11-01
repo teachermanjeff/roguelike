@@ -18,6 +18,7 @@ const MAX_ROOMS = 20
 const CELL_SIZE = ROOM_SIZE + HALLWAY_LENGTH
 
 const FLOOR_TILE_SET_ID = 5
+const GRASS_TILE_SET_ID = 3
 const WALL_TILE_SET_ID = 2
 const VOID_TILE_SET_ID = -1
 
@@ -136,6 +137,12 @@ func paint_rect(rect_size, rect_pos):
 		for y in rect_size.y:
 			var tile_coord = rect_pos + Vector2(x, y)
 			tile_map.set_cell(tile_coord, 2, Vector2(0, 0), FLOOR_TILE_SET_ID)
+			if randf_range(0, 1) < 0.02:
+				for nx in range(-5 / 2, 5 / 2 + 1):
+					for ny in range(-5 / 2, 5 / 2 + 1):
+						if randf_range(0, 1) < 0.2:
+							var new_tile_coord = tile_coord + Vector2(nx, ny)
+							tile_map.set_cell(new_tile_coord, 2, Vector2(0, 0), GRASS_TILE_SET_ID)
 			if randf_range(0, 1) < 0.002:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), GOBLIN_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.001:
