@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbgo33qbgobvb"]
+[gd_scene load_steps=9 format=3 uid="uid://dbgo33qbgobvb"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_evxty"]
 [ext_resource type="TileSet" uid="uid://cyboy1cj3nmav" path="res://scenes/ground.tres" id="1_fe1jj"]
@@ -10,6 +10,12 @@ size = Vector2(400, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e550u"]
 size = Vector2(70, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_136s6"]
+size = Vector2(400, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ghj8"]
+size = Vector2(400, 60)
 
 [node name="Main" type="Node2D"]
 
@@ -41,3 +47,15 @@ position = Vector2(73, 0)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_e550u")
 action = "move right"
+
+[node name="up" type="TouchScreenButton" parent="Player"]
+position = Vector2(-0.2, -54.4)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_136s6")
+action = "move up"
+
+[node name="down" type="TouchScreenButton" parent="."]
+position = Vector2(-2, 275)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_5ghj8")
+action = "move down"
