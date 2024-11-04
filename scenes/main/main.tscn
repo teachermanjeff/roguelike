@@ -39,6 +39,7 @@ position = Vector2(16, -16)
 tile_set = ExtResource("2_py0nx")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
+position = Vector2(-1, -0.999998)
 
 [node name="left" type="TouchScreenButton" parent="Player"]
 position = Vector2(-72.3999, 0)
@@ -47,8 +48,8 @@ shape = SubResource("RectangleShape2D_cbbnn")
 action = "move left"
 
 [node name="left arrow" type="Sprite2D" parent="Player/left"]
-position = Vector2(-2.61491, 0.0384624)
-scale = Vector2(52.9913, 2.16484)
+position = Vector2(67.9159, 0.0769228)
+scale = Vector2(53.7377, 1.0989)
 texture = ExtResource("5_6aenf")
 
 [node name="right" type="TouchScreenButton" parent="Player"]
@@ -58,8 +59,9 @@ shape = SubResource("RectangleShape2D_e550u")
 action = "move right"
 
 [node name="right arrow" type="Sprite2D" parent="Player/right"]
-position = Vector2(-2.98023e-08, 0)
-scale = Vector2(10.4286, 27)
+position = Vector2(-9, -0.999996)
+rotation = -6.28319
+scale = Vector2(10.8909, 14.9614)
 texture = ExtResource("6_854w5")
 
 [node name="up" type="TouchScreenButton" parent="Player"]
@@ -69,8 +71,8 @@ shape = SubResource("RectangleShape2D_136s6")
 action = "move up"
 
 [node name="up arrow" type="Sprite2D" parent="Player/up"]
-position = Vector2(7.72625e-06, 0.875)
-scale = Vector2(28.7857, 8.60714)
+position = Vector2(2, 9)
+scale = Vector2(18.5714, 8.60714)
 texture = ExtResource("5_ysbol")
 
 [node name="down" type="TouchScreenButton" parent="Player"]
@@ -80,6 +82,6 @@ shape = SubResource("RectangleShape2D_5ghj8")
 action = "move down"
 
 [node name="down arrow" type="Sprite2D" parent="Player/down"]
-position = Vector2(1.49998, -0.499939)
-scale = Vector2(42.7143, 7.28571)
+position = Vector2(4, -10)
+scale = Vector2(18.2143, 9.00001)
 texture = ExtResource("8_nfeuy")
