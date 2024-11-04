@@ -1,15 +1,17 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://ttaux60r73ew"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ttaux60r73ew"]
 
 [ext_resource type="PackedScene" uid="uid://b4ffkbrai8hw3" path="res://entities/coin/coin.tscn" id="1_831yp"]
 [ext_resource type="PackedScene" uid="uid://bhwyo70q05ktj" path="res://entities/chest/chest.tscn" id="2_i3n75"]
 [ext_resource type="PackedScene" uid="uid://0cw2r4h8yxil" path="res://entities/goblin/goblin.tscn" id="2_pcpsw"]
 [ext_resource type="PackedScene" uid="uid://calpe63dvgqfd" path="res://entities/Bat/bat.tscn" id="4_ix7md"]
+[ext_resource type="PackedScene" uid="uid://b22kps52tiug6" path="res://entities/random/random.tscn" id="5_ms6om"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lt28c"]
 scenes/1/scene = ExtResource("1_831yp")
 scenes/2/scene = ExtResource("2_i3n75")
 scenes/3/scene = ExtResource("2_pcpsw")
 scenes/4/scene = ExtResource("4_ix7md")
+scenes/6/scene = ExtResource("5_ms6om")
 
 [resource]
 tile_size = Vector2i(32, 32)

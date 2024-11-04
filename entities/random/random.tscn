@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://b22kps52tiug6"]
+
+[ext_resource type="Script" path="res://entities/random/area_2d.gd" id="1_cqydr"]
+[ext_resource type="Shader" path="res://tint.gdshader" id="2_ixc6i"]
+[ext_resource type="Texture2D" uid="uid://bcjrjx7g7qp6f" path="res://sprites/quest_symbol.png" id="3_s2nwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku37"]
+size = Vector2(6.4, 6.4)
+
+[sub_resource type="Gradient" id="Gradient_ldqst"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pb6bw"]
+gradient = SubResource("Gradient_ldqst")
+
+[sub_resource type="Gradient" id="Gradient_fs4e7"]
+colors = PackedColorArray(0, 0, 0, 1, 0.832637, 0.875725, 0.9886, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ri0u"]
+gradient = SubResource("Gradient_fs4e7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tu5oy"]
+shader = ExtResource("2_ixc6i")
+shader_parameter/pallete = SubResource("GradientTexture1D_6ri0u")
+
+[node name="random" type="Area2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
+script = ExtResource("1_cqydr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-07, -3.8147e-07)
+shape = SubResource("RectangleShape2D_2ku37")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(8.9407e-07, 8.56815e-07)
+scale = Vector2(0.025, 6.4)
+texture = SubResource("GradientTexture1D_pb6bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tu5oy")
+position = Vector2(-1.41561e-06, -1.41561e-06)
+scale = Vector2(0.914, 0.914)
+texture = ExtResource("3_s2nwa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
