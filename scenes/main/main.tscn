@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbgo33qbgobvb"]
+[gd_scene load_steps=13 format=3 uid="uid://dbgo33qbgobvb"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_evxty"]
 [ext_resource type="TileSet" uid="uid://cyboy1cj3nmav" path="res://scenes/ground.tres" id="1_fe1jj"]
 [ext_resource type="TileSet" uid="uid://ttaux60r73ew" path="res://scenes/entities.tres" id="2_py0nx"]
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="2_qh1r5"]
+[ext_resource type="Texture2D" uid="uid://b7egq25b3yapt" path="res://sprites/leftarrow_symbol.png" id="5_6aenf"]
+[ext_resource type="Texture2D" uid="uid://difea0flxrtuj" path="res://sprites/letters/uparrrow_symbol.png" id="5_ysbol"]
+[ext_resource type="Texture2D" uid="uid://bd6veeidfbf4u" path="res://sprites/rightarrow_symbol.png" id="6_854w5"]
+[ext_resource type="Texture2D" uid="uid://bhassh0h5slpu" path="res://sprites/downarrow_symbol.png" id="8_nfeuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbbnn"]
 size = Vector2(400, 25)
@@ -36,11 +40,16 @@ tile_set = ExtResource("2_py0nx")
 
 [node name="Player" parent="." instance=ExtResource("2_qh1r5")]
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Player"]
+[node name="left" type="TouchScreenButton" parent="Player"]
 position = Vector2(-72.3999, 0)
 scale = Vector2(0.0382812, 2.6)
 shape = SubResource("RectangleShape2D_cbbnn")
 action = "move left"
+
+[node name="left arrow" type="Sprite2D" parent="Player/left"]
+position = Vector2(-2.61491, 0.0384624)
+scale = Vector2(52.9913, 2.16484)
+texture = ExtResource("5_6aenf")
 
 [node name="right" type="TouchScreenButton" parent="Player"]
 position = Vector2(73, 0)
@@ -48,14 +57,29 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_e550u")
 action = "move right"
 
+[node name="right arrow" type="Sprite2D" parent="Player/right"]
+position = Vector2(-2.98023e-08, 0)
+scale = Vector2(10.4286, 27)
+texture = ExtResource("6_854w5")
+
 [node name="up" type="TouchScreenButton" parent="Player"]
 position = Vector2(-0.2, -54.4)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_136s6")
 action = "move up"
 
-[node name="down" type="TouchScreenButton" parent="."]
-position = Vector2(-2, 275)
-scale = Vector2(1, 1)
+[node name="up arrow" type="Sprite2D" parent="Player/up"]
+position = Vector2(7.72625e-06, 0.875)
+scale = Vector2(28.7857, 8.60714)
+texture = ExtResource("5_ysbol")
+
+[node name="down" type="TouchScreenButton" parent="Player"]
+position = Vector2(-0.4, 55)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_5ghj8")
 action = "move down"
+
+[node name="down arrow" type="Sprite2D" parent="Player/down"]
+position = Vector2(1.49998, -0.499939)
+scale = Vector2(42.7143, 7.28571)
+texture = ExtResource("8_nfeuy")
