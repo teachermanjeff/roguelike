@@ -153,7 +153,7 @@ func paint_rect(rect_size, rect_pos):
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), COIN_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.0001:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), CHEST_TILE_SET_ID)
-			elif randf_range(0, 1) < 0.003:
+			elif randf_range(0, 1) < 0.0009:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), RANDOM_TILE_SET_ID)
 
 
