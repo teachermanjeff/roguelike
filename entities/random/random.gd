@@ -5,5 +5,4 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		queue_free()
-		
-		PlayerData.score += rng
+		PlayerData.give_money(rng)

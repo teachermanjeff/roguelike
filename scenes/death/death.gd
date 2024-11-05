@@ -7,4 +7,5 @@ func _ready():
 
 func _on_button_down() -> void:
 	PlayerData.player_health = 5
+	PlayerData.score = 0
 	get_tree().change_scene_to_packed(mainScene)

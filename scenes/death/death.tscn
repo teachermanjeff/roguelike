@@ -1,16 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci8pgdyjcrgyl"]
+[gd_scene load_steps=8 format=3 uid="uid://ci8pgdyjcrgyl"]
 
 [ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="1_qwmcv"]
-[ext_resource type="Script" path="res://scenes/death/death.gd" id="1_vtd0q"]
 [ext_resource type="Texture2D" uid="uid://c051hypevbvr5" path="res://sprites/bats.webp" id="3_sccgc"]
 [ext_resource type="Texture2D" uid="uid://ckt5nnsqhcf02" path="res://sprites/bats2.webp" id="4_um3c6"]
 
-[sub_resource type="Gradient" id="Gradient_c0yux"]
+[sub_resource type="Gradient" id="Gradient_b2tgr"]
 offsets = PackedFloat32Array(0, 0.0180723)
 colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0.105882, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_h2b5y"]
-gradient = SubResource("Gradient_c0yux")
+gradient = SubResource("Gradient_b2tgr")
 
 [sub_resource type="LabelSettings" id="LabelSettings_srw5f"]
 font_size = 32
@@ -35,6 +34,7 @@ text = "You Suck!"
 label_settings = SubResource("LabelSettings_srw5f")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 144.0
@@ -47,6 +47,7 @@ text = "You Suck!"
 label_settings = SubResource("LabelSettings_srw5f")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Reason" type="Label" parent="."]
 offset_left = 157.0
@@ -57,15 +58,7 @@ theme_override_fonts/font = ExtResource("1_qwmcv")
 theme_override_font_sizes/font_size = 35
 label_settings = SubResource("LabelSettings_f23rp")
 horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="."]
-offset_left = 304.0
-offset_top = 384.0
-offset_right = 496.0
-offset_bottom = 448.0
-theme_override_fonts/font = ExtResource("1_qwmcv")
-text = "Restart"
-script = ExtResource("1_vtd0q")
+metadata/_edit_use_anchors_ = true
 
 [node name="Bats2" type="Sprite2D" parent="."]
 position = Vector2(413, 544)
@@ -83,5 +76,3 @@ position = Vector2(153, 135)
 rotation = 0.479966
 scale = Vector2(0.298667, 0.322421)
 texture = ExtResource("3_sccgc")
-
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3xoeuglptb1t"]
+
+[ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="1_rq8au"]
+[ext_resource type="Script" path="res://scenes/death/death.gd" id="2_6eovk"]
+[ext_resource type="Texture2D" uid="uid://mnw403imhol" path="res://sprites/party.png" id="3_ilg6x"]
+
+[sub_resource type="Gradient" id="Gradient_c0yux"]
+offsets = PackedFloat32Array(0, 0.0180723)
+colors = PackedColorArray(0, 0, 0, 1, 0.282752, 0.626283, 0.23402, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rgd3a"]
+gradient = SubResource("Gradient_c0yux")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gw4yi"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qk8s"]
+
+[node name="winscene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(393, 301)
+scale = Vector2(3.21875, 616.5)
+texture = SubResource("GradientTexture1D_rgd3a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 135.0
+offset_top = 219.0
+offset_right = 647.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("1_rq8au")
+theme_override_font_sizes/font_size = 35
+text = "You Win!"
+label_settings = SubResource("LabelSettings_gw4yi")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Reason" type="Label" parent="."]
+offset_left = -768.0
+offset_top = 313.0
+offset_right = -256.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("1_rq8au")
+theme_override_font_sizes/font_size = 35
+label_settings = SubResource("LabelSettings_8qk8s")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 349.0
+offset_right = 492.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("1_rq8au")
+text = "Play Again?"
+script = ExtResource("2_6eovk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 112.0
+offset_right = 675.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("1_rq8au")
+theme_override_font_sizes/font_size = 35
+text = "congratulations"
+label_settings = SubResource("LabelSettings_gw4yi")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Party" type="Sprite2D" parent="."]
+position = Vector2(645, 253)
+scale = Vector2(0.0550537, 0.0506906)
+texture = ExtResource("3_ilg6x")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
