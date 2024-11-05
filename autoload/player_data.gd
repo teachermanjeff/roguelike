@@ -9,7 +9,7 @@ var deathReason = "sigma"
 func give_money(amount: int) -> void:
 	score += amount 
 
-	if score >= 0:
+	if score >= 15:
 		get_tree().change_scene_to_packed(winScene) 
 
 func take_damage(amount: int, death_message: String) -> void:

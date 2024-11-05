@@ -8,4 +8,3 @@ func _on_body_entered(body: Node2D) -> void:
 			queue_free()
 			PlayerData.take_damage(-random,"Maybe don't try the lottery")
 			PlayerData.score += 0
-

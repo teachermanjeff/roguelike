@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3xoeuglptb1t"]
 
 [ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="1_rq8au"]
-[ext_resource type="Script" path="res://scenes/death/death.gd" id="2_6eovk"]
+[ext_resource type="Script" path="res://scenes/death/restart.gd" id="2_6eovk"]
 [ext_resource type="Texture2D" uid="uid://mnw403imhol" path="res://sprites/party.png" id="3_ilg6x"]
 
 [sub_resource type="Gradient" id="Gradient_c0yux"]
