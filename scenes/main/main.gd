@@ -26,6 +26,7 @@ const GOBLIN_TILE_SET_ID = 3
 const CHEST_TILE_SET_ID = 2
 const COIN_TILE_SET_ID = 1
 const BAT_TILE_SET_ID = 4
+const RANDOM_TILE_SET_ID = 6
 
 var rooms_left = MAX_ROOMS
 
@@ -152,7 +153,8 @@ func paint_rect(rect_size, rect_pos):
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), COIN_TILE_SET_ID)
 			elif randf_range(0, 1) < 0.0001:
 				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), CHEST_TILE_SET_ID)
-				
+			elif randf_range(0, 1) < 0.003:
+				entity_map.set_cell(tile_coord, 0, Vector2(0, 0), RANDOM_TILE_SET_ID)
 
 
 func fill_map():
