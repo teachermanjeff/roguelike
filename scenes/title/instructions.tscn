@@ -10,8 +10,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="instructions" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 800.0
-offset_bottom = 640.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 816.0
+offset_bottom = 624.0
 color = Color(0.904475, 0.615678, 0.290159, 1)
 
 [node name="Images2" type="Sprite2D" parent="."]
