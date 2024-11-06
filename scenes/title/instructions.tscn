@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqra7tohtta2"]
+
+[ext_resource type="FontFile" uid="uid://b0xp2ppitjld2" path="res://QuinqueFive.ttf" id="2_hhmlt"]
+[ext_resource type="Texture2D" uid="uid://bw18h6tpqpjx5" path="res://scenes/title/images.png" id="2_jlqdm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kf5v6"]
+font = ExtResource("2_hhmlt")
+font_color = Color(0, 0, 0, 1)
+
+[node name="instructions" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 640.0
+color = Color(0.904475, 0.615678, 0.290159, 1)
+
+[node name="Images2" type="Sprite2D" parent="."]
+position = Vector2(4857, 1108)
+scale = Vector2(5.86991, 3.35243)
+texture = ExtResource("2_jlqdm")
+
+[node name="Images" type="Sprite2D" parent="."]
+position = Vector2(2854, 1115)
+scale = Vector2(3.51686, 3.593)
+texture = ExtResource("2_jlqdm")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 795.0
+offset_bottom = 568.0
+text = "Game Overview
+In this game, players must navigate a 
+labyrinth filled with dangers while 
+trying to survive as long as possible.
+The maze is filled with enemies and traps
+and the treasures the player must find a
+way to escape before they are caught.
+
+Controls:
+W: Move Up
+A: Move Left
+S: Move Down
+D: Move Right
+
+Arrow Keys: Alternative movement controls 
+(Up, Down, Left, Right)
+
+Good Luck!
+Start your adventure now!
+
+"
+label_settings = SubResource("LabelSettings_kf5v6")

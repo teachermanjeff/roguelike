@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt86557o1kamj"]
+[gd_scene load_steps=8 format=3 uid="uid://5vfara33hhl6"]
 
 [ext_resource type="Texture2D" uid="uid://if1p6h7r2cwg" path="res://scenes/title/background.png" id="1_p83op"]
-[ext_resource type="Script" path="res://scenes/title/button.gd" id="2_ov1is"]
+[ext_resource type="Script" path="res://scenes/title/load_main.gd" id="2_ov1is"]
+[ext_resource type="Script" path="res://scenes/title/toggle_instructions.gd" id="3_yjjyf"]
+[ext_resource type="PackedScene" uid="uid://ctqra7tohtta2" path="res://scenes/title/instructions.tscn" id="4_8k3hr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5c6r"]
 
@@ -36,12 +38,29 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 2.025
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = 498.0
-offset_right = 427.0
-offset_bottom = 557.0
+offset_left = 306.0
+offset_top = 470.0
+offset_right = 402.0
+offset_bottom = 513.0
 theme = SubResource("Theme_e5spi")
 text = "start"
 script = ExtResource("2_ov1is")
 
+[node name="instructions" parent="." instance=ExtResource("4_8k3hr")]
+visible = false
+
+[node name="Button 2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.025
+anchor_bottom = 0.5
+offset_left = 306.0
+offset_top = 538.0
+offset_right = 402.0
+offset_bottom = 581.0
+text = "Instructions"
+script = ExtResource("3_yjjyf")
+
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_down" from="Button 2" to="Button" method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button 2" to="Button 2" method="_on_button_down"]
