@@ -18,3 +18,4 @@ func take_damage(amount: int, death_message: String) -> void:
 	if player_health <= 0:
 		deathReason = death_message
 		get_tree().change_scene_to_packed(deathScene)
+		score=0
