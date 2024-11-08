@@ -47,6 +47,7 @@ text = "start"
 script = ExtResource("2_ov1is")
 
 [node name="instructions" parent="." instance=ExtResource("4_8k3hr")]
+visible = false
 position = Vector2(6, 6)
 
 [node name="Button 2" type="Button" parent="."]
