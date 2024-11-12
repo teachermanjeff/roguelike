@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbgo33qbgobvb"]
+[gd_scene load_steps=13 format=3 uid="uid://dbgo33qbgobvb"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_evxty"]
 [ext_resource type="TileSet" uid="uid://cyboy1cj3nmav" path="res://scenes/ground.tres" id="1_fe1jj"]
 [ext_resource type="TileSet" uid="uid://ttaux60r73ew" path="res://scenes/entities.tres" id="2_py0nx"]
 [ext_resource type="PackedScene" uid="uid://bguwvf3liqqtk" path="res://player/player.tscn" id="2_qh1r5"]
 [ext_resource type="Texture2D" uid="uid://b7egq25b3yapt" path="res://sprites/leftarrow_symbol.png" id="5_6aenf"]
-[ext_resource type="Script" path="res://scenes/main/touchbutton.gd" id="5_y66v5"]
 [ext_resource type="Texture2D" uid="uid://difea0flxrtuj" path="res://sprites/letters/uparrrow_symbol.png" id="5_ysbol"]
 [ext_resource type="Texture2D" uid="uid://bd6veeidfbf4u" path="res://sprites/rightarrow_symbol.png" id="6_854w5"]
 [ext_resource type="Texture2D" uid="uid://bhassh0h5slpu" path="res://sprites/downarrow_symbol.png" id="8_nfeuy"]
@@ -47,7 +46,6 @@ position = Vector2(-72.3999, 0)
 scale = Vector2(0.0382812, 2.6)
 shape = SubResource("RectangleShape2D_cbbnn")
 action = "move left"
-script = ExtResource("5_y66v5")
 
 [node name="left arrow" type="Sprite2D" parent="Player/left"]
 position = Vector2(67.9159, 0.0769228)
@@ -59,7 +57,6 @@ position = Vector2(73, 0)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_e550u")
 action = "move right"
-script = ExtResource("5_y66v5")
 
 [node name="right arrow" type="Sprite2D" parent="Player/right"]
 position = Vector2(-9, -0.999996)
@@ -72,7 +69,6 @@ position = Vector2(-0.2, -54.4)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_136s6")
 action = "move up"
-script = ExtResource("5_y66v5")
 
 [node name="up arrow" type="Sprite2D" parent="Player/up"]
 position = Vector2(2, 9)
@@ -84,7 +80,6 @@ position = Vector2(-0.4, 55)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_5ghj8")
 action = "move down"
-script = ExtResource("5_y66v5")
 
 [node name="down arrow" type="Sprite2D" parent="Player/down"]
 position = Vector2(4, -10)
